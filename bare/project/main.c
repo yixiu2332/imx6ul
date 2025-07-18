@@ -6,7 +6,8 @@
 #include "bsp_gpio.h"
 #include "bsp_int.h"
 #include "bsp_exti.h"
-#include "bsp_uart.h"
+#include "bsp_epittimer.h"
+
 /*
  * @description : main 函数
  * @param : 无
@@ -15,8 +16,9 @@
 int main(void)
 {
     int_init(); //初始化中断向量表，最先调用
-    // iimx6ul_clk_init(); /* 初始化系统时钟 */
+    iimx6ul_clk_init(); /* 初始化系统时钟 */
     clk_enable(); /* 使能所有的时钟 */
+    delay_init();/*初始化GPT定时器*/
     // led_init();  //qemu不存在这个设备
     // beep_init(); //qemu不存在这个设备
     // exti_init();
@@ -25,8 +27,9 @@ int main(void)
 
     while (1)
     {
+        
+        delayms(1000);
         puts("123!");
-        delay(1000);
     }
     return 0;
 }

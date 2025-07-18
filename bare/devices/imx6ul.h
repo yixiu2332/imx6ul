@@ -8,6 +8,7 @@
 #include "core_ca7.h"
 #include "bsp_delay.h"
 #include "bsp_clk.h"
+#include "bsp_uart.h"
 #include "cc.h"
 
 #endif

@@ -14,7 +14,7 @@ SECTIONS {
         *(.data)
     }
 
-    . = ALIGN(4);
+    . = ALIGN(4);/*这行很重要，不然可能会出现__bss_start地址没有对齐，然后清空bss段时程序崩溃*/
     __bss_start = .;
     .bss ALIGN(4) : {
         *(.bss)
