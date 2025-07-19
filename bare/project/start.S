@@ -32,7 +32,7 @@ Reset_Handler:
     bic r0, r0, #0x1 /* 清除 C1 的 M 位，关闭 MMU */
     mcr p15, 0, r0, c1, c0, 0 /* 将 r0 的值写入到 CP15 的 C1 中 */
 
-#if 0
+
     /* 汇编版本设置中断向量表偏移,现在已使用C语言 */
     ldr r0, =0X80000000
     dsb
@@ -40,7 +40,7 @@ Reset_Handler:
     mcr p15, 0, r0, c12, c0, 0
     dsb
     isb
-#endif
+
     /* 设置各个模式下的栈指针，
     * 注意：IMX6UL 的堆栈是向下增长的！
     * 堆栈指针地址一定要是 4 字节地址对齐的！！！
@@ -72,7 +72,7 @@ Reset_Handler:
     /* 使能 IRQ 中断 */
     mrs r0, cpsr /* 读取 cpsr 寄存器值到 r0 中 */
     bic r0, r0, #0x80 /* 将 r0 寄存器中 bit7 清零，也就是 CPSR 中的 I 位清零，表示允许 IRQ 中断*/
-    msr cpsr, r0 /* 将 r0 重新写入到 cpsr 中 */
+    msr cpsr_c, r0  /* 将 r0 重新写入到 cpsr 中 */
 
     // 清零 BSS 段
     ldr r0, =__bss_start    //r0 = BSS 段起始地址
@@ -121,10 +121,12 @@ IRQ_Handler:
 	mrs r0, spsr				/* 读取spsr寄存器 */
 	push {r0}					/* 保存spsr寄存器 */
 
-	mrc p15, 4, r1, c15, c0, 0 /* 从CP15的C0寄存器内的值到R1寄存器中
+	/*mrc p15, 4, r1, c15, c0, 0 *//* 从CP15的C0寄存器内的值到R1寄存器中
 								* 参考文档ARM Cortex-A(armV7)编程手册V4.0.pdf P49
 								* Cortex-A7 Technical ReferenceManua.pdf P68 P138
-								*/							
+								*/	
+    ldr r1, =0x00A00000        //手动加载GIC基地址                          
+
 	add r1, r1, #0X2000			/* GIC基地址加0X2000，也就是GIC的CPU接口端基地址 */
 	ldr r0, [r1, #0X0C]			/* GIC的CPU接口端基地址加0X0C就是GICC_IAR寄存器，
 								 * GICC_IAR寄存器保存这当前发生中断的中断号，我们要根据

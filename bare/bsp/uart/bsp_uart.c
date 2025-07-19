@@ -7,8 +7,8 @@
  */
 void uart_init(void)
 {
-	/* 1、初始化串口IO 			*/
-	uart_io_init();
+	/* 1、初始化串口IO ,qemu不需要，因为该引脚只能是串口，没有其他的重映射			*/
+	//uart_io_init();
 
 	/* 2、初始化UART1  			*/
 	uart_disable(UART1);	/* 先关闭UART1 		*/

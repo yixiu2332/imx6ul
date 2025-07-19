@@ -12,7 +12,7 @@ case $1 in
     -nographic \
     -kernel ${KERNEL_FILE} \
     -m 512M \
-    -d unimp,guest_errors \
+    -d unimp,guest_errors -d int \
     ;;
     2)
     echo "调试中"
@@ -22,10 +22,10 @@ case $1 in
     -nographic \
     -kernel ${KERNEL_FILE} \
     -m 512M \
-    -d unimp,guest_errors \
-    -s -S
+    -d unimp,guest_errors -d int  \
+    -s -S \
     ;;
     0)
-    gdb-multiarch  ${KERNEL_FILE} -ex "target remote localhost:1234" -ex "b main"
+    gdb-multiarch  ${KERNEL_FILE} -ex "target remote localhost:1234" -ex "b main" -ex "b IRQ_Handler"
     ;; 
 esac

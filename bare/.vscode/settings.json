@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "bsp_epittimer.h": "c",
+        "bsp_exti.h": "c",
+        "bsp_led.h": "c",
+        "imx6ul.h": "c",
+        "bsp_beep.h": "c"
+    }
+}

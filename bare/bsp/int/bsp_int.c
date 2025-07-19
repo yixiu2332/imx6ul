@@ -57,9 +57,9 @@ void system_register_irqhandler(IRQn_Type irq, system_irq_handler_t handler, voi
  */
 void system_irqhandler(unsigned int giccIar) 
 {
-
+	
    uint32_t intNum = giccIar & 0x3FFUL;
-   
+   printf("interrupt start,ID:%d",giccIar);
    /* 检查中断号是否符合要求 */
    if ((intNum >= NUMBER_OF_INT_VECTORS))
    {
@@ -83,9 +83,8 @@ void system_irqhandler(unsigned int giccIar)
  */
 void default_irqhandler(unsigned int giccIar, void *userParam) 
 {
-	while(1) 
-  	{
-   	}
+	printf("default_irqhandler return!");
+	return;
 }
 
 

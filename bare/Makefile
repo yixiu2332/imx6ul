@@ -19,6 +19,7 @@ INCDIRS := 	devices \
 			bsp/exti \
 			bsp/epittimer \
 			bsp/uart \
+			stdio/include \
 
 
 SRCDIRS := 	project \
@@ -32,6 +33,7 @@ SRCDIRS := 	project \
 			bsp/exti \
 			bsp/epittimer \
 			bsp/uart \
+			stdio/lib \
 
 INCLUDE := $(patsubst %, -I %, $(INCDIRS))
 SFILES := $(foreach dir, $(SRCDIRS), $(wildcard $(dir)/*.S))
@@ -62,7 +64,7 @@ $(SOBJS) : obj/%.o : %.S | obj/
 	$(CC) -Wall -nostdlib -fno-builtin -c -g $(INCLUDE) -o $@ $<
 
 $(COBJS) : obj/%.o : %.c | obj/
-	$(CC) -Wall -nostdlib -fno-builtin -c -g $(INCLUDE) -o $@ $<
+	$(CC) -Wall -nostdlib -fno-builtin -Wa,-mimplicit-it=thumb -c -g $(INCLUDE) -o $@ $<
 
 clean:
 	rm -rf $(TARGET).elf $(TARGET).dis $(TARGET).bin $(COBJS) $(SOBJS)

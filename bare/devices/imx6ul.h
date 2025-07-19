@@ -9,6 +9,8 @@
 #include "bsp_delay.h"
 #include "bsp_clk.h"
 #include "bsp_uart.h"
+#include "bsp_int.h"
+#include "stdio.h"
 #include "cc.h"
 
 #endif

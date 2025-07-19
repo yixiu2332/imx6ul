@@ -9,6 +9,8 @@ void delay_init(void);
 void delayus(unsigned    int usdelay);
 void delayms(unsigned	 int msdelay);
 void delay(volatile unsigned int n);
+
+void gpt1_init(uint32_t value);
 void gpt1_irqhandler(void);
 
 #endif

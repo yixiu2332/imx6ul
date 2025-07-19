@@ -32,7 +32,7 @@ void epit1_init(unsigned int frac, unsigned int value)
 
 	/* 使能GIC中对应的中断 			*/
 	GIC_EnableIRQ(EPIT1_IRQn);
-
+	GIC_SetPriority(GPT2_IRQn,0x40);//设置优先级
 	/* 注册中断服务函数 			*/
 	system_register_irqhandler(EPIT1_IRQn, (system_irq_handler_t)epit1_irqhandler, NULL);	
 
@@ -46,7 +46,7 @@ void epit1_init(unsigned int frac, unsigned int value)
  */
 void epit1_irqhandler(void)
 { 
-	
+	putc('h');
 	
 	EPIT1->SR |= 1<<0; 				/* 清除中断标志位 */
 }
