@@ -20,12 +20,9 @@ int main(void)
     clk_enable(); /* 使能所有的时钟 */
     delay_init();/*初始化GPT定时器*/
     uart_init();
-    // epit1_init(3, 66000000); //没反应，可能是没有该设备
-    // gpt1_init(3000000);
+    // epit1_init(3, 66000000); 
+    gpt1_init(2000000);
 
-
-
-  
 
     while (1)
     {

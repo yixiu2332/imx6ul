@@ -526,7 +526,7 @@ FORCEDINLINE __STATIC_INLINE uint32_t __get_CBAR(void)
 {
   // return __MRC(15, 4, 15, 0, 0);
   //我觉得CBAR寄存器有问题，返回的是0,GIC分发器的基地址是0xA01000；
-  return (uint32_t)0x00A00000;
+  return (uint32_t)0xA00000;
 }
 
 /*******************************************************************************

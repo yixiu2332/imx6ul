@@ -69,11 +69,12 @@ Reset_Handler:
 
     cpsie i /* 打开全局中断 */
 
-    /* 使能 IRQ 中断 */
+#if 0
+    /* 使能 IRQ 中断,可以被cpsie i完美代替 */
     mrs r0, cpsr /* 读取 cpsr 寄存器值到 r0 中 */
     bic r0, r0, #0x80 /* 将 r0 寄存器中 bit7 清零，也就是 CPSR 中的 I 位清零，表示允许 IRQ 中断*/
     msr cpsr_c, r0  /* 将 r0 重新写入到 cpsr 中 */
-
+#endif
     // 清零 BSS 段
     ldr r0, =__bss_start    //r0 = BSS 段起始地址
     ldr r1, =__bss_end      //r1 = BSS 段结束地址
