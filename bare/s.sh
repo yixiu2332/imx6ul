@@ -12,7 +12,7 @@ case $1 in
     -nographic \
     -kernel ${KERNEL_FILE} \
     -m 512M \
-    -d unimp,guest_errors -d int \
+    -d unimp,guest_errors  \
     ;;
     2)
     echo "调试中"

@@ -196,7 +196,7 @@ void gpt1_init(uint32_t value)
      * 使能GIC里面相应的中断，并且注册中断处理函数
 	 */
 	GIC_EnableIRQ(GPT1_IRQn);	//使能GIC中对应的中断
-
+	GIC_SetPriority(GPT1_IRQn, 0x40);
 	__asm__ volatile("cpsie i");
 	system_register_irqhandler(GPT1_IRQn, (system_irq_handler_t)gpt1_irqhandler, NULL);	//注册中断服务函数	
 
@@ -213,7 +213,7 @@ void gpt1_irqhandler(void)
 	 */
 	if(GPT1->SR & (1<<0)) 
 	{
-	
+		puts("h");
 	}
 	
 	GPT1->SR |= 1<<0; /* 清除中断标志位 */
