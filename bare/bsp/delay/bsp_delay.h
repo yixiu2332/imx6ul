@@ -2,7 +2,8 @@
 #define __BSP_DELAY_H
 
 #include "imx6ul.h"
-
+#include "bsp_int.h"
+#include "bsp_uart.h"
 
 /* 函数声明 */
 void delay_init(void);

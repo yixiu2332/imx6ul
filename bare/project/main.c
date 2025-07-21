@@ -5,9 +5,6 @@
 #include "bsp_int.h"
 #include "stdio.h"
 // BSP驱动
-#include "bsp_led.h"
-#include "bsp_beep.h"
-#include "bsp_key.h"
 #include "bsp_gpio.h"
 #include "bsp_exti.h"
 #include "bsp_epittimer.h"

@@ -1,7 +1,7 @@
 #ifndef _BSP_INT_H
 #define _BSP_INT_H
 #include "imx6ul.h"
-
+#include "stdio.h"
 /* 中断服务函数形式 */ 
 typedef void (*system_irq_handler_t) (unsigned int giccIar, void *param);
 
