@@ -1,6 +1,7 @@
 #ifndef __CORTEX_CA7_H
 #define __CORTEX_CA7_H
 
+#include "MCIMX6Y2.h"
 #include <stdint.h>
 #include <string.h>
 

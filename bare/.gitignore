@@ -1,0 +1,8 @@
+#忽略以下文件
+main.bin
+main.dis
+main.elf
+
+#忽略以下文件夹
+.cache/
+obj/

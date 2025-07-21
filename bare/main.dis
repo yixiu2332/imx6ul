@@ -6987,7 +6987,7 @@ Disassembly of section .debug_line:
      1c4:	01050000 	mrseq	r0, (UNDEF: 5)
      1c8:	10020500 	andne	r0, r2, r0, lsl #10
      1cc:	03800003 	orreq	r0, r0, #3
-     1d0:	0505010f 	streq	r0, [r5, #-271]	; 0xfffffef1
+     1d0:	05050114 	streq	r0, [r5, #-276]	; 0xfffffeec
      1d4:	2f2f2f30 	svccs	0x002f2f30
      1d8:	0905302f 	stmdbeq	r5, {r0, r1, r2, r3, r5, ip, sp}
      1dc:	01040200 	mrseq	r0, R12_usr
@@ -9486,7 +9486,7 @@ Disassembly of section .debug_info:
      128:	0000007a 	andeq	r0, r0, sl, ror r0
      12c:	6a0c1105 	bvs	304548 <shift+0x304548>
      130:	01000000 	mrseq	r0, (UNDEF: 0)
-     134:	0034050f 	eorseq	r0, r4, pc, lsl #10
+     134:	00340514 	eorseq	r0, r4, r4, lsl r5
      138:	03100000 	tsteq	r0, #0
      13c:	003c8000 	eorseq	r8, ip, r0
      140:	9c010000 	stcls	0, cr0, [r1], {-0}

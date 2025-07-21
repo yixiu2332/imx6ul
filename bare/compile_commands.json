@@ -1,0 +1,42 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/arm-linux-gnueabihf-gcc",
+      "-Wall",
+      "-fno-builtin",
+      "-Wa,-mimplicit-it=thumb",
+      "-c",
+      "-g",
+      "-I",
+      "devices",
+      "-I",
+      "bsp/clk",
+      "-I",
+      "bsp/led",
+      "-I",
+      "bsp/delay",
+      "-I",
+      "bsp/beep",
+      "-I",
+      "bsp/gpio",
+      "-I",
+      "bsp/key",
+      "-I",
+      "bsp/int",
+      "-I",
+      "bsp/exti",
+      "-I",
+      "bsp/epittimer",
+      "-I",
+      "bsp/uart",
+      "-I",
+      "stdio/include",
+      "-o",
+      "obj/main.o",
+      "project/main.c"
+    ],
+    "directory": "/home/xiu/code/imx6ul/bare",
+    "file": "/home/xiu/code/imx6ul/bare/project/main.c",
+    "output": "/home/xiu/code/imx6ul/bare/obj/main.o"
+  }
+]
