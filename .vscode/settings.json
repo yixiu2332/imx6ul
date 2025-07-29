@@ -14,4 +14,11 @@
         "bsp_gpio.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled"
+		"clangd.arguments": [
+		"--clang-tidy=false",
+		"--completion-style=bundled",
+		"--header-insertion=never"
+	  ],
+	"clangd.checkUpdates": false,
+	"clangd.onConfigChanged": "ignore"
 }

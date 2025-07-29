@@ -8,7 +8,7 @@ OBJDUMP := $(CROSS_COMPILE)objdump
 
 LIBPATH := -lgcc -L /usr/local/arm/gcc-linaro/lib/gcc/arm-linux-gnueabihf/4.9.4
 
-INCDIRS := 	devices \
+INCDIRS := 	sdk \
 			bsp/clk \
 			bsp/led \
 			bsp/delay \

@@ -1,0 +1,22 @@
+{
+    "C_Cpp.intelliSenseEngine": "Tag Parser",
+    "search.useIgnoreFiles": false, // 禁用搜索时对 .gitignore 文件的尊重
+    "search.useParentIgnoreFiles": false, // 如果你打开的是子目录，这个也可能有影响
+    "files.exclude":{
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "linux-6.12.40/tools": true, // 相对于工作区根目录
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true,
+        "/linux-6.12.40/tools": true, // 相对于工作区根目录
+    }
+    
+    
+ 
+}

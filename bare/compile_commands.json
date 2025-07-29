@@ -8,7 +8,7 @@
       "-c",
       "-g",
       "-I",
-      "devices",
+      "sdk",
       "-I",
       "bsp/clk",
       "-I",

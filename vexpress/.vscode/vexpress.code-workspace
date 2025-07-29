@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.lds": "linkerscript",
+			"kernel.h": "c",
+			"delay.h": "c",
+			"init.h": "c",
+			"types.h": "c",
+			"module.h": "c"
+		},
+		"git.ignoreLimitWarning": true
+	}
+}
