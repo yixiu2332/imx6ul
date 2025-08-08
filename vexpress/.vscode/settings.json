@@ -9,12 +9,24 @@
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
         "linux-6.12.40/tools": true, // 相对于工作区根目录
+        "linux-6.12.40/security":true,
     },
     "search.exclude": {
         "**/node_modules": true,
         "**/bower_components": true,
         "**/*.code-search": true,
         "/linux-6.12.40/tools": true, // 相对于工作区根目录
+        "linux-6.12.40/security":true,
+    },
+    "files.associations": {
+        "*.lds": "linkerscript",
+        "module.h": "c",
+        "ostream": "cpp",
+        "fcntl.h": "c",
+        "stdio.h": "c",
+        "unistd.h": "c",
+        "typeinfo": "c",
+        "cdev.h": "c"
     }
     
     

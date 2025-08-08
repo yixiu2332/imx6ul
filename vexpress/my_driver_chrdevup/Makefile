@@ -1,7 +1,7 @@
 ARCH ?= arm
 CROSS_COMPILE ?= arm-linux-gnueabihf-
 # 模块名称 (这是你希望生成的 .ko 文件的名字)
-obj-m := chrdevbase.o
+obj-m := chrdevup.o
 
 KERNELDIR := /home/xiu/code/imx6ul/vexpress/linux-6.12.40
 

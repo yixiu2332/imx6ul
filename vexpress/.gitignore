@@ -1,2 +1,17 @@
 linux-6.12.40/
 .cache/
+
+*.o
+*.ko
+*.obj
+*.a
+*.so
+*.d
+*.mod
+*.cmd
+*.symvers
+*.mod.c
+*.markers
+*.order
+*.gcno
+*.gcda 
